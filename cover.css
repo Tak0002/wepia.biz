@@ -8,13 +8,9 @@ a:focus,
 a:hover {
   color: #fff;
 }
-#blog a{
-  text-decoration:none;
-  border-style:none; 
-}
 
-#title .masthead-brand{
-	font-size:35px;
+.mastfoot a{
+  text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000, -1px -1px 1px #000;
 }
 
 
@@ -32,11 +28,14 @@ img.bg {
 	  /* Set rules to fill background */
 	  min-height: 100%;
 	  min-width: 1024px;
+
 	  /* Set up proportionate scaling */
 	  width: 100%;
 	  height: auto;
+
 	  /* Set up positioning */
 	  position: fixed;
+
 	  /* またはabsolute; */
 	  top: 0;
 	  left: 0;
@@ -54,24 +53,30 @@ body {
   height: 100%;
   background-color: #333;
 }
+
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 50%);
+  box-shadow: inset 0 0 100px rgb(0 0 0 / 50%);
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
+/* Flexbox layout for vertical and horizontal centering */
 .site-wrapper {
-  display: table;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%; /* For at least Firefox */
   min-height: 100%;
 }
+
 .site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .cover-container {
   margin-right: auto;
   margin-left: auto;
@@ -81,12 +86,9 @@ body {
 .inner {
   padding: 30px;
 }
+
 h3{
-	  text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000, -1px -1px 1px #000;
-}
-.mastfoot a{
-	  text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000, -1px -1px 1px #000;
-	
+        text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000, -1px -1px 1px #000;
 }
 
 /*
@@ -100,47 +102,61 @@ h3{
 .masthead-nav > li {
   display: inline-block;
 }
+
 .masthead-nav > li + li {
   margin-left: 20px;
 }
+
 .masthead-nav > li > a {
   padding-right: 0;
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  color: rgb(255 255 255 / 75%);
   border-bottom: 2px solid transparent;
 }
+
+.masthead-nav > .active > a {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: rgb(255 255 255 / 25%);
 }
-.masthead-nav > .active > a,
+
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
   color: #fff;
   border-bottom-color: #fff;
 }
 
+#title .masthead-brand{
+    font-size:35px;
+}
+
+#blog a{
+  text-decoration:none;
+  border-style:none;
+}
+
 #main{
-	width:100%;
-	height:80px;
-//	background-color:rgb(219, 0, 108);	
-	background-color:rgba(0, 0, 0,0.7);	
-	font-family : 小塚ゴシック Pr6N,ヒラギノ角ゴ ProN W3,Meiryo, メイリオ, sans-serif;
-//    color : rgb(125, 187, 25);
-	font-size : 20px;
-//	text-shadow: 1px 1px 1px #fff,
-//    -1px 1px 1px #fff,
-//    1px -1px 1px #fff,
-//    -1px -1px 1px #fff;
-	position: relative;
-	z-index: 3;
-	filter: alpha(opacity=80);
-//	opacity:0.7;	
-	display: none;
+        width:100%;
+        height:80px;
+        background-color:rgb(0 0 0 / 70%);
+        font-family : "小塚ゴシック Pr6N","ヒラギノ角ゴ ProN W3",Meiryo, "メイリオ", sans-serif;
+        font-size : 20px;
+        position: relative;
+        z-index: 3;
+        opacity:0;
+        transition: opacity 2s;
+}
+
+#main.visible{
+        opacity:1;
 }
 
 #logo{
@@ -154,10 +170,11 @@ h3{
 }
 
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .masthead-brand {
     float: left;
   }
+
   .masthead-nav {
     float: right;
   }
@@ -171,6 +188,7 @@ h3{
 .cover {
   padding: 0 20px;
 }
+
 .cover .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
@@ -183,8 +201,9 @@ h3{
 
 .mastfoot {
   color: #3498db; /* IE8 proofing */
- 	  text-shadow: 1px 1px 1px #FFF, -1px 1px 1px #FFF, 1px -1px 1px #FFF, -1px -1px 1px #FFF;
-//  color: rgba(255,255,255,.5);
+          text-shadow: 1px 1px 1px #FFF, -1px 1px 1px #FFF, 1px -1px 1px #FFF, -1px -1px 1px #FFF;
+
+  /* color: rgba(255,255,255,.5); */
 }
 
 
@@ -192,19 +211,16 @@ h3{
  * Affix and center
  */
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   /* Pull out the header and footer */
 
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
   /* Handle the widths */
   .masthead,
   .mastfoot,
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
+
     #main{
 	      font-size : 50px;
   }
@@ -212,72 +228,77 @@ h3{
 }
 
 #content{
-	margin-top:40px;
-	text-align:center;
-	display: none;
+        margin-top:40px;
+        text-align:center;
+        display: none;
 }
 
 #content-inside{
-	background-color:rgba(0,0,0,0.8);
-	margin: 0 auto;
-	text-align: left;
-	padding:20px;
-	padding-top:10px;
-	max-width:769px;
-	border-radius:10px;
-#	//width:200px;
-	//list-style-type:circle;
-}
-#content-inside h2{
-	font-size:20px;
+        background-color:rgb(0 0 0 / 80%);
+        margin: 0 auto;
+        text-align: left;
+        padding:20px;
+        padding-top:10px;
+        max-width:769px;
+        border-radius:10px;
+        opacity:0;
+        transition: opacity 1.2s;
 }
 
-@media (min-width: 992px) {
+#content-inside h2{
+        font-size:20px;
+}
+
+@media (width >= 992px) {
   #title {
 	margin-left:200px; 
 	z-index:4;
   }
+
     #social{
   	margin-right:40px; 
   }
 }
-@media screen and (max-width: 1024px){
+
+@media screen and (width <= 1024px){
   img.bg {
 	  left: 50%;
  	 margin-left: -512px; }
 }
 
-@media(min-width:1200px){
+@media(width >=1200px){
   .masthead {
     position: fixed;
     top: 0;
   }
+
   .mastfoot {
     position: fixed;
     bottom: 0;
   }
+
   	#social{
 		float:right;
 	}
 }
 
-@media(max-width:768px){
+@media(width <=768px){
 	#logo{
 		width:60px;
 		height:60px;
 	}
+
 	#main{
 		height:60px;
 	}
+
 	#content-inside{
 		width:100%;
-		border-radius:0px;
-		//width:200px;
-		//list-style-type:circle;
+		border-radius:0;
 	}
 }
 
-@media(max-height:590px){
+@media(height <=590px){
 	#title{
 		position:initial;
 	}
