@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Takahiro Watanabe - 渡部貴博">
+    <meta name="description" content="wepia.biz 公式サイトです。">
+    <meta name="keywords" content="wepia,渡部貴博,graspSchedule.js,SFC体育予約情報,まじつらい">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>wepia.biz</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css?201601081623" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+	var i = 0;
+	var int;
+	$(window).bind("load", function() {
+	    $('#main').fadeIn(2000); // フェードインの実行
+	    int=setInterval("sFade(i)",900);  // ミリ秒ごとにフェードインの処理の実行
+	});
+	function sFade() {
+	    if (i >= 1) {
+	        clearInterval(int); // setIntervalの解除
+	        openMenu();
+	    }
+	    i++;
+	}
+	function onmouseenterMain(){
+//		document.getElementById('main').style.opacity=0.8;
+//		for(var i = 0.7; i<=0.9; i = i + 0.01){
+			$('#main').css({'background-color':'rgba(0,0,0,0.8)'});
+//		}
+	}
+	function onmouseleaveMain(){
+//		document.getElementById('main').style.opacity=0.7;		
+//		for(var i = 0.9; i>=0.7; i = i - 0.01){
+			$('#main').css({'background-color':'rgba(0,0,0,0.7)'});
+//		}
+	}
+	
+	function openMenu(){
+      $("#content-inside").css({opacity: 0,display:"block"});
+      $("#content").animate(
+        {height: "show"},
+        "700",
+        "swing",
+        function(){
+	      $("#content-inside").animate(
+	        {opacity: 1},
+	        "1200"
+	      );
+        }
+      );
+      /*$("#content-inside").animate(
+        {opacity: 1},
+        "1000"
+      );*/
+	}
+	
+    </script>
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61908764-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+  <script src="//use.typekit.net/rbo8pzu.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+<!--img class="bg" src="background.jpg" alt="" /-->
+<img class="bg" src="/img/gate_bridge.jpg" alt="" />
+
+    <div id='container' class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div id='title' class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">wepia.biz</h3>
+            </div>
+          </div>
+          <div id="blog">
+              <div id='main' class="inner cover" onmouseenter="onmouseenterMain()" onmouseleave="onmouseleaveMain()">
+                  <img id='logo' src='wlogo.png'>
+ 	                 <span class="tk-fira-sans-2">Takahiro Watanabe</span>
+              </div>
+          </div>
+          <div id="content">
+          	<div id="content-inside">
+          		<div class="row">
+	          		<div class="col-sm-6">
+	          			<a href="http://mazitsurai.net"><h2 class="">まじつらい</h2></a>
+	          			つらい専用SNS。iOS向けアプリ。つらいに特化した、メッセンジャーとSNSの融合。<br>
+	          			ついつい使いたくなるUIを導入。
+	          		</div>
+	          		<div class="col-sm-6">
+	          			<h2 class="">Calfol</h2>
+	          			カレンダーをフォローして共有するアプリケーション。予定クリエーターがフォロワーのカレンダーに予定を配信することができます。</br>
+	          			※サービス終了
+	          		</div>
+          		</div>
+          		<div class="row">
+	          		<div class="col-sm-6">
+	          			<a href="http://tak0002.github.io/jquery.graspSchedule.js/"><h2 class="">GraspSchedule.js</h2></a>
+	          			複雑なスケージュールを可視化できるjQueryプラグイン。イベントカレンダーとタイムラインのいいとこ取りをしたUIを採用。日本、英語圏、ロシア、中国、韓国、フィリピンなどの有名サイトの記事にて紹介される。
+	          		</div>
+	          		<div class="col-sm-6">
+	          			<a href="http://wepia.biz/wellness/"><h2 class="">SFC Wellness bot</h2></a>
+	          			ツイ廃ほど体育が取りたくなる。慶應義塾大学湘南藤沢キャンパスの体育の授業に必須のアイテム。体育履修者の1/3以上が利用。
+	          		</div>		          	
+          		</div>
+			</div>
+          </div>
+          <div class="mastfoot">
+            <div class="inner" id="social">
+            twitter <a href="https://twitter.com/Tak0002">@Tak0002</a><br>
+            facebook <a href="https://www.facebook.com/takahiro1220">takahiro1220</a><br>
+            ask.fm <a href="http://ask.fm/Tak0002">Tak0002</a><br>
+            github <a href="https://github.com/Tak0002">Tak0002</a><br>
+            blog <a href="/blog/">Tak0002</a><br>
+            pictures <a href="/pictures/">Tak0002</a>
+            <p>
+            
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+  </body>
+</html>
+
