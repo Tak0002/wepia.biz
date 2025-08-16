@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:css": "stylelint cover.css"
+    "lint:css": "stylelint cover.css",
+    "dev": "http-server ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "http-server": "^14.1.1",
     "stylelint": "^16.23.1",
     "stylelint-config-standard": "^39.0.0"
   }

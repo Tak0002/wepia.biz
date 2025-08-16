@@ -9,13 +9,8 @@ a:hover {
   color: #fff;
 }
 
-#blog a{
-  text-decoration:none;
-  border-style:none; 
-}
-
-#title .masthead-brand{
-	font-size:35px;
+.mastfoot a{
+  text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000, -1px -1px 1px #000;
 }
 
 
@@ -93,12 +88,7 @@ body {
 }
 
 h3{
-	  text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000, -1px -1px 1px #000;
-}
-
-.mastfoot a{
-	  text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000, -1px -1px 1px #000;
-	
+        text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000, -1px -1px 1px #000;
 }
 
 /*
@@ -127,17 +117,30 @@ h3{
   border-bottom: 2px solid transparent;
 }
 
+.masthead-nav > .active > a {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: rgb(255 255 255 / 25%);
 }
 
-.masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+#title .masthead-brand{
+    font-size:35px;
+}
+
+#blog a{
+  text-decoration:none;
+  border-style:none;
 }
 
 #main{
